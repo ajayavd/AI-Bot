@@ -39,7 +39,7 @@ func main() {
 	wolframClient := &wolfram.Client{AppID: os.Getenv("WOLFRAM_APP_ID")}
 	go printCommandEvents(bot.CommandEvents())
 
-	bot.Command("query for bot - <message>", &slacker.CommandDefinition{
+	bot.Command("- <message>", &slacker.CommandDefinition{
 		Description: "send any questions to wolfram",
 		Handler: func(botCtx slacker.BotContext, request slacker.Request, response slacker.ResponseWriter) {
 			query := request.Param("message")
